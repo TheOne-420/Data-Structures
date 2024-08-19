@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
+
 #define SIZE 3 
 int stack[SIZE];
 int top=0;
@@ -23,7 +24,7 @@ void push()
     top++;  
     printf("Item inserted successfully\n");
 }
-void pop()
+void dequeue()
 {
     //Check if stack is empty
     if(top==0)
@@ -37,6 +38,7 @@ void pop()
 }
 void display()
 {
+    int i;
     //Check if stack is empty
     if(top==0)
     {
@@ -45,7 +47,7 @@ void display()
         return;
     }
     printf("Stack elements are: ");
-    for(int i=0; i<top; i++)
+    for( i=0; i<top; i++)
         printf("%d ", stack[i]);
     printf("\n");
 }
@@ -81,13 +83,14 @@ void main()
     int choice;
     do
     {
-        printf("\n1. Insert\n2. Display\n3. Delete\n4.Update \n5. Search\n6. Exit\n");
+        printf("1. Insert\n2. Display\n3. Delete\n4.Update \n5. Search\n6. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
         switch (choice)
         {
         case 1:
+            clrscr();
             // Insert an element into the stack
             push();
             break;
@@ -98,7 +101,7 @@ void main()
         
         case 3:
             
-            pop();
+            dequeue();
             break;
         
         case 4:
