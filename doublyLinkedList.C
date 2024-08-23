@@ -154,8 +154,10 @@ void insertion_specified()
        printf("Enter value");  
        scanf("%d",&item);  
        ptr->data = item;  
+
        ptr->next = temp->next;  
        ptr -> prev = temp;  
+       
        temp->next = ptr;  
        temp->next->prev=ptr;  
        printf("\nnode inserted\n");  
