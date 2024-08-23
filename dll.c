@@ -85,9 +85,8 @@ void insertAtPos()
     else
     {
         temp=head;
-        while (i<=pos)
+        while (i<(pos-1) )
         {
-            printf("I:%d ID:%d\n", i, temp->id); 
             temp = temp->next;
            
             if(temp == NULL)  
@@ -102,12 +101,13 @@ void insertAtPos()
     
     
     newNode->id = value;
-    
+        
+        
+    temp->next->prev = newNode;
+    newNode->next = temp->next;
+
     temp->next = newNode;
     newNode->prev = temp;
-    
-    newNode->next = temp->next;
-    temp->next->prev = newNode;
 
     
 }
