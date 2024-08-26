@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
+#include <stdlib.h>
 
 #define SIZE 3 
 int queue[SIZE];
@@ -8,9 +9,11 @@ int rear=-1;
 
 void enqueue()
 {
-   int value;
-   if (front == 0 && rear == SIZE-1 || rear+1 == front)  
+   int value,r;
+   if (front == 0 && rear == SIZE-1 || (rear+1)%SIZE == front)  
    {
+         r= (rear+1)%SIZE;
+        printf("%d:", r);
         printf("Queue is full.\n");
         return;
    }
@@ -64,6 +67,7 @@ void display()
         for (i  = front; i <= rear; i++)
         {
             printf("%d ", queue[i]);
+           
         }
     }
     
@@ -111,7 +115,7 @@ int main()
     int choice;
     do
     {
-        printf("1. Push\n2. Display\n3. Delete\n4.Update \n5. Search\n6. Exit\n");
+        printf("1. Push\n2. Display\n3. Delete\n4. Update \n5. Search\n6. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -120,26 +124,34 @@ int main()
         case 1:
           
             // Insert an element into the stack
+            system("cls");
             enqueue();
+            getch();
             break;
         
         case 2:
+            system("cls");
             display();
+            getch();
             break;
         
         case 3:
-            
+            system("cls");
             dequeue();
+            getch();
             break;
         
         case 4:
-          
+            system("cls");
             update();
+            getch();
             break;
         
         case 5:
           
+            system("cls");
             peep();
+            getch();
             break;
         case 6:
          printf("Quitting\n");
