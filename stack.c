@@ -15,11 +15,15 @@ void push()
         return;
     }
     int item;
+<<<<<<< Updated upstream
     if (top==-1)
     {
         top = 0;
     }
     
+=======
+
+>>>>>>> Stashed changes
     printf("Enter the item to push: ");
     scanf("%d", &item);
 
@@ -100,7 +104,7 @@ void peep()
     }
     if(flag==0) printf("Item not found in the stack\n");
 }
-void main()
+int main()
 {
     int choice;
     do
@@ -113,7 +117,11 @@ void main()
         switch (choice)
         {
         case 1:
+<<<<<<< Updated upstream
          
+=======
+           
+>>>>>>> Stashed changes
             // Insert an element into the stack
             system("cls");
             push();

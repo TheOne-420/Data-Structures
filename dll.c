@@ -52,6 +52,7 @@ void insertAtEnd()
 
     if (tail==NULL)
     {
+        //First node is inserted
         tail = head = temp;
     }
     else
