@@ -68,6 +68,7 @@
     "unordered_map": "c",
     "vector": "c",
     "system_error": "c",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "conio.h": "c"
   }
 }
