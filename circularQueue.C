@@ -12,7 +12,7 @@ void enqueue()
    int value,r;
    if (front == 0 && rear == SIZE-1 || (rear+1)%SIZE == front)  
    {
-         r= (rear+1)%SIZE;
+        r = (rear+1)%SIZE;
         printf("%d:", r);
         printf("Queue is full.\n");
         return;
@@ -26,6 +26,7 @@ void enqueue()
     {
         front = 0;
         rear = 0;
+        queue[rear] =  value;
     }
     //Queue is full
     else if (rear==SIZE-1)
@@ -102,7 +103,34 @@ void dequeue()
 }
 void update()
 {
+    int val,index,i;
+    if (front == -1)
+    {
+        printf("Queue is empty.\n");
+        return;
+    }
+    printf("Enter index of element you want to update\n");
+    scanf("%d",&index);
+     if (i>rear)
+    {
+        printf("Index out of range\n");
+        return;
+    }
+    printf("Enter new value\n");
+    scanf("%d",&val);
 
+    for ( i = front; i <= rear; i++)
+    {
+       if (i==index)
+       {
+         printf("Updated value %d at %d\n",val,index);
+         queue[i] = val;
+         break;
+       }
+       
+    }
+   
+    
 }
 void peep()
 {
@@ -115,8 +143,9 @@ int main()
     int choice;
     do
     {
-        printf("1. Push\n2. Display\n3. Delete\n4. Update \n5. Search\n6. Exit\n");
-        printf("Enter your choice: ");
+        system("cls");
+        printf("\t\t1. Push\n\t\t2. Display\n\t\t3. Delete\n\t\t4. Update \n\t\t5. Search\n\t\t6. Exit\n");
+        printf("\t\tEnter your choice: ");
         scanf("%d", &choice);
 
         switch (choice)
