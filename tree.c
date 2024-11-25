@@ -40,6 +40,12 @@ node* insertNode(node *n)
     scanf("%d", &value);
      n = createNode(n, value);
 }
+void printTabs(int num)
+{
+    
+    for (int i = 0; i < num; i++)
+        printf("\t");
+}
 void printTree(node *n)
 {
         if (n == NULL) return;
